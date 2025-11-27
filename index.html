@@ -17,8 +17,10 @@
             updateDoc, 
             deleteDoc, 
             doc, 
+            setDoc,  
             onSnapshot,
-            serverTimestamp 
+            serverTimestamp,
+            getDocs  
         } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
         import { 
             getAuth, 
@@ -29,13 +31,13 @@
         } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyBDdBKLSlF3s9k2j-2iobMRJAJGhZ9-kmM",
-            authDomain: "gestion-de-inventario-4a3d2.firebaseapp.com",
-            projectId: "gestion-de-inventario-4a3d2",
-            storageBucket: "gestion-de-inventario-4a3d2.firebasestorage.app",
-            messagingSenderId: "91946579758",
-            appId: "1:91946579758:web:6a5ce0c3315363e0e1ecbf",
-            measurementId: "G-Z0X2LNFRS8"
+            apiKey: "AIzaSyCfhYmkRLhQ7cMDyYjNue_XcunaAj4pz30",  
+            authDomain: "inventario-fbacc.firebaseapp.com",      
+            projectId: "inventario-fbacc",                       
+            storageBucket: "inventario-fbacc.firebasestorage.app", 
+            messagingSenderId: "860151342286",                   
+            appId: "1:860151342286:web:bc585f2cfbb7d5f056dc9f",  
+            measurementId: "G-XXXXXXXXXX" 
         };
 
         // Initialize Firebase
@@ -54,8 +56,10 @@
             updateDoc, 
             deleteDoc, 
             doc, 
+            setDoc,  // ✅ AGREGAR AQUÍ TAMBIÉN
             onSnapshot,
-            serverTimestamp
+            serverTimestamp,
+            getDocs  // ✅ AGREGAR AQUÍ TAMBIÉN
         };
         window.firebaseAuthFunctions = {
             signInWithEmailAndPassword, 
@@ -64,8 +68,9 @@
             onAuthStateChanged
         };
 
-        console.log('✅ Firebase configurado correctamente');
+        console.log('✅ Firebase configurado correctamente con NUEVO proyecto');
         console.log('📊 Firestore functions disponibles:', Object.keys(window.firebaseFirestore));
+        console.log('🔑 Proyecto:', firebaseConfig.projectId);
     </script>
 
     <!-- Luego las demás librerías -->
