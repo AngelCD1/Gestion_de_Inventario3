@@ -60,7 +60,7 @@ const InventoryManagementSystem = () => {
     // ================== FUNCIONES DE NOTIFICACIÓN ==================
     const showNotification = useCallback((message, type = 'success') => {
         setNotification({ message, type, id: Date.now() });
-        setTimeout(() => setNotification(null), 4000);
+        setTimeout(() => setNotification(null), 2000);
     }, []);
 
     // ================== VERIFICACIÓN DE FIREBASE ==================
@@ -432,7 +432,7 @@ const InventoryManagementSystem = () => {
             setShowSaleModal(false);
             
             // Mostrar notificación con IDs
-            if (saleTotal > 40000) {
+            if (saleTotal > 20000) {
                 showNotification(`🎉 ¡VENTA MAYOR! Procesada - Total: $${saleTotal} | Factura: ${invoiceId}`, 'success');
             } else {
                 showNotification(`✓ Venta procesada - Total: $${saleTotal} | Factura: ${invoiceId}`, 'success');
@@ -1837,9 +1837,9 @@ const InventoryManagementSystem = () => {
                     <div className="flex gap-1 overflow-x-auto scrollbar-hide">
                         {/* Tabs para Modo Caja */}
                         {!user && [
-                            { id: 'caja', label: '🏪 Caja', icon: '🏪' },
-                            { id: 'productos', label: '📦 Productos', icon: '📦' },
-                            { id: 'ventas', label: '🧾 Ventas', icon: '🧾' }
+                            { id: 'caja', label: '🏪 Caja', icon: '' },
+                            { id: 'productos', label: '📦 Productos', icon: '' },
+                            { id: 'ventas', label: '🧾 Ventas', icon: '' }
                         ].map(tab => (
                             <button
                                 key={tab.id}
@@ -1860,10 +1860,10 @@ const InventoryManagementSystem = () => {
 
                         {/* Tabs para Modo Admin */}
                         {user && [
-                            { id: 'dashboard', label: '📊 Dashboard', icon: '📊' },
-                            { id: 'productos', label: '📦 Productos', icon: '📦' },
-                            { id: 'ventas', label: '🧾 Ventas', icon: '🧾' },
-                            { id: 'alertas', label: '⚠️ Alertas', icon: '⚠️' }
+                            { id: 'dashboard', label: '📊 Dashboard', icon: '' },
+                            { id: 'productos', label: '📦 Productos', icon: '' },
+                            { id: 'ventas', label: '🧾 Ventas', icon: '' },
+                            { id: 'alertas', label: '⚠️ Alertas', icon: '' }
                         ].map(tab => (
                             <button
                                 key={tab.id}
